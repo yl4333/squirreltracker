@@ -10,7 +10,7 @@ class Command(BaseCommand):
         parser.add_argument('file_path', nargs='?', type=str)
 
     def handle(self, *args, **options):
-        with open(options['file_path'], 'r') as csvfile:
+        with open(options['file_path'], 'r', encoding="utf8") as csvfile:
             csvreader = csv.DictReader(csvfile, delimiter=',')
             # print(csvreader.fieldnames)
             for row in csvreader:

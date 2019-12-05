@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<a href="/sightings/add/"> Add New Squirrel </a>
+{% if squirrels %}
+    <ul>
+    {% for squirrel in squirrels %}
+        <li><a href="/sightings/{{ squirrel.squirrelid }}/">{{ squirrel.squirrelid }}</a></li>
+    {% endfor %}
+</ul>
+{% else %}
+    <p>No squirrels is available.</p>
+{% endif %}
 
 
 

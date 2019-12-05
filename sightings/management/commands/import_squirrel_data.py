@@ -3,6 +3,7 @@ from sightings.models import Squirrel
 import os
 import csv
 from datetime import datetime
+# pylint: disable=no-member
 
 class Command(BaseCommand):
     help = 'Use csv file to import squirrel data'
@@ -10,7 +11,7 @@ class Command(BaseCommand):
         parser.add_argument('file_path', nargs='?', type=str)
 
     def handle(self, *args, **options):
-        with open(options['file_path'], 'r') as csvfile:
+        with open(options['file_path'], 'r', encoding="utf8") as csvfile:
             csvreader = csv.DictReader(csvfile, delimiter=',')
             # print(csvreader.fieldnames)
             for row in csvreader:

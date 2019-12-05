@@ -6,7 +6,7 @@ from .models import Squirrel
 def index(request):
     squirrels = Squirrel.objects.all()
     context = {
-        'squirrels':squirrels
+        'squirrels': squirrels
     }
     return render(request, 'index.html', context)
 

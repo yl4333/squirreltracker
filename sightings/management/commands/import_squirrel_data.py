@@ -3,6 +3,7 @@ from sightings.models import Squirrel
 import os
 import csv
 from datetime import datetime
+# pylint: disable=no-member
 
 class Command(BaseCommand):
     help = 'Use csv file to import squirrel data'

@@ -17,7 +17,7 @@ class Command(BaseCommand):
             for row in csvreader:
                 squirrels, created = Squirrel.objects.get_or_create(
                     squirrelid = row['Unique Squirrel ID'],
-                    longtitude = row['X'],
+                    longitude = row['X'],
                     latitude = row['Y'],
                     shifts = row['Shift'],
                     date = datetime.strptime(row['Date'], '%m%d%Y').date(),

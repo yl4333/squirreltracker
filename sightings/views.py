@@ -35,16 +35,15 @@ def add(request):
     return render(request, 'add.html', context)
 
 
-def update(request, squirrelid=None):
+def update(request, squirrelid):
     print(squirrelid)
     squirrel = Squirrel.objects.get(squirrelid=squirrelid)
     if request.method == 'POST':
-        
         form = SquirrelForm(request.POST, instance=squirrel)
         #check data with form
         if form.is_valid():
             form.save()
-            return redirect('sightings/')
+            return redirect('/sightings/')
     else:
         form = SquirrelForm(instance=squirrel)
     

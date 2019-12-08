@@ -11,9 +11,12 @@ def index(request):
     }
     return render(request, 'index.html', context)
 
-def stats(request, squirrelid):
-    squirrel = Squirrel.obejects.get(id = squirrelid)
-    return HttpResponse(squirrel.color)
+def stats(request):
+    squirrel = Squirrel.obejects.all()
+    context={
+        'squirrels':squirrels   
+    }
+    return render(request, 'stats.html', context)
 
 def add(request):
     if request.method == 'POST':

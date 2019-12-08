@@ -1,6 +1,7 @@
-<h1>{{ squirrel.squirrelid }}</h1>
+
 <ul>
 {% for squirrel in squirrels %}
+    <h1>{{ squirrel.squirrelid }}</h1>
     <li>{{ squirrel.latitude }}</li>
     <li>{{ squirrel.longitude }}</li>
     <li>{{ squirrel.age }}</li>

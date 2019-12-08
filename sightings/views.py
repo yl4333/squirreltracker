@@ -12,7 +12,7 @@ def index(request):
     return render(request, 'index.html', context)
 
 def stats(request):
-    squirrel = Squirrel.obejects.all()
+    squirrels = Squirrel.objects.all()
     context={
         'squirrels':squirrels   
     }
@@ -24,7 +24,7 @@ def add(request):
         #chech data with form
         if form.is_valid():
             form.save()
-            return redirect(f'sightings/')
+            return HttpResponseRedirect('/sightings/')
     else:
         form = SquirrelForm()
     
@@ -35,22 +35,24 @@ def add(request):
     return render(request, 'add.html', context)
 
 
-def update(request, squirrelid):
-    squirrel = Squirrel.objects.get(id=squirrelid)
+def update(request, squirrelid=None):
+    print(squirrelid)
+    squirrel = Squirrel.objects.get(squirrelid=squirrelid)
     if request.method == 'POST':
+        
         form = SquirrelForm(request.POST, instance=squirrel)
         #check data with form
         if form.is_valid():
             form.save()
-            return redirect(f'/sightings/{squirrelid}')
+            return redirect('sightings/')
     else:
-        form = PetForm(instance=squirrel)
+        form = SquirrelForm(instance=squirrel)
     
     context = {
         'form': form,
     }
     
-    return render(request, 'sightings/update.html', context)
+    return render(request, 'update.html', context)
 
 
 

@@ -7,14 +7,19 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 <body>
+    <a href="/sightings/" class="list-group-item list-group-item-action" style="height: 40px; width: 250px;padding: 5px 10px;">
+        Back
+    </a>
 <ul>
 {% for squirrel in squirrels %}
-    <h1>{{ squirrel.squirrelid }}</h1>
-    <li>{{ squirrel.latitude }}</li>
-    <li>{{ squirrel.longitude }}</li>
-    <li>{{ squirrel.age }}</li>
-    <li>{{ squirrel.color }}</li>
-    <li>{{ squirrel.location }}</li>
+    <ul class="list-group">
+        <h5 class="mb-1">Squirrel ID: {{ squirrel.squirrelid }}</h5>
+        <li class="list-group-item">Latitude: {{ squirrel.latitude }}</li>
+        <li class="list-group-item">Longitude: {{ squirrel.longitude }}</li>
+        <li class="list-group-item">Age: {{ squirrel.age }}</li>
+        <li class="list-group-item">Color: {{ squirrel.color }}</li>
+        <li class="list-group-item">Location: {{ squirrel.location }}</li>
+    </ul>
 {% endfor %}
 </ul>
     <!-- Optional JavaScript -->

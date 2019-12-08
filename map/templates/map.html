@@ -57,7 +57,7 @@
         // {% else %}
         // console.log("No Squirrel")
         // {% endif %}
-        {% for squirrel in squirrels %}
+        {% for squirrel in squirrels %}ß
           var point_lat_lon = [ {{ squirrel.latitude }}, {{ squirrel.longitude }} ];
           var marker = L.marker(point_lat_lon).addTo(map);
         {% endfor %}

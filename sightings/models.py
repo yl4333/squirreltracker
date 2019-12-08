@@ -6,10 +6,10 @@ class Squirrel(models.Model):
         help_text="Unique Squirrel ID",
     )
 
-    longtitude = models.DecimalField(
+    longitude = models.DecimalField(
         max_digits=50,
         decimal_places=30,
-        help_text="longtitude",
+        help_text="longitude",
     )
 
     latitude = models.DecimalField(

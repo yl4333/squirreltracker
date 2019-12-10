@@ -8,7 +8,8 @@ or add new squirrels if they are not included in the current database.
 
 ##  Group Name and Section
 
-Group Name: Project Group 50 
+Group Name: Project Group 50
+
 Section: Section 2
 
 ## UNI of team members
